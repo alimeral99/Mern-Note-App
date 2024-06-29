@@ -10,11 +10,11 @@ function Header() {
       </Link>
 
       <div className="header__right">
-        <Link href="/" className="links">
+        <Link to="/login" className="links">
           Login
         </Link>
 
-        <Link href="/" className="links">
+        <Link to="/signup" className="links">
           Sign Up
         </Link>
       </div>
