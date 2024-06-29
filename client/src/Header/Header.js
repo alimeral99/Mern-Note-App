@@ -1,20 +1,21 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="header">
-      <a href="#" className="header__logo">
+      <Link className="header__logo" to={"/"}>
         Note App
-      </a>
+      </Link>
 
-      <a href="#" className="links">
+      <Link href="/" className="links">
         Login
-      </a>
+      </Link>
 
-      <a href="#" className="links">
+      <Link href="/" className="links">
         Sign Up
-      </a>
+      </Link>
     </div>
   );
 }
