@@ -5,9 +5,13 @@ const app = express();
 
 require("dotenv").config();
 
+const userRouter = require("./routes/user");
+
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
+
+app.use("/user", userRouter);
 
 mongoose
   .connect(process.env.DB_URI)
