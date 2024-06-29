@@ -10,8 +10,10 @@
 
 .header__logo {
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
+  color: #333;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .links {

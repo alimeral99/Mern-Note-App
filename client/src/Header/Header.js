@@ -5,17 +5,19 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className="header">
-      <Link className="header__logo" to={"/"}>
+      <Link className="header__logo " to={"/"}>
         Note App
       </Link>
 
-      <Link href="/" className="links">
-        Login
-      </Link>
+      <div className="header__right">
+        <Link href="/" className="links">
+          Login
+        </Link>
 
-      <Link href="/" className="links">
-        Sign Up
-      </Link>
+        <Link href="/" className="links">
+          Sign Up
+        </Link>
+      </div>
     </div>
   );
 }
