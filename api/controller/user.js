@@ -1,12 +1,14 @@
 const User = require("../models/user");
 const bcryptjs = require("bcryptjs");
 
+const { errorHandler } = require("../utils/error");
+
 const register = async (req, res, next) => {
   const { username, email, password } = req.body;
 
   try {
     let user = await User.findOne({ email });
-    if (user) res.status(401).json("User already registered.");
+    if (user) return next(errorHandler(401, "User already registered."));
 
     const hashedPassword = bcryptjs.hashSync(password, 10);
 
