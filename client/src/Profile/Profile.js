@@ -1,8 +1,15 @@
 import React from "react";
 import "./Profile.css";
 
+import { useDispatch, useSelector } from "react-redux";
+
 function Profile() {
-  return <div>This Page is Profile</div>;
+  const { currentUser } = useSelector((state) => state.user);
+
+  console.log(currentUser);
+  if (!currentUser) return <p>Loading</p>;
+
+  return <div>welcome to your profile {currentUser.username}</div>;
 }
 
 export default Profile;
