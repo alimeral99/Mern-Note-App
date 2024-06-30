@@ -39,3 +39,8 @@ export const auth = async (dispatch, token) => {
     dispatch(signUpSuccess(data));
   } catch ({ response }) {}
 };
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem("jwt");
+  document.location.href = "/login";
+};
