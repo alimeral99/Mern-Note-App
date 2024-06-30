@@ -20,7 +20,6 @@ export const login = async (dispatch, email, password) => {
       password,
     });
 
-    console.log(data);
     const { token, user } = data;
 
     dispatch(signUpSuccess(user));
@@ -29,4 +28,14 @@ export const login = async (dispatch, email, password) => {
     const { data } = response;
     dispatch(signInFailure(data.message));
   }
+};
+
+export const auth = async (dispatch, token) => {
+  try {
+    const { data } = await axios.post(`${API_URL}/user/auth`, {
+      token,
+    });
+
+    dispatch(signUpSuccess(data));
+  } catch ({ response }) {}
 };

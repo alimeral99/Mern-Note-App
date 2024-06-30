@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 function Profile() {
   const { currentUser } = useSelector((state) => state.user);
 
-  console.log(currentUser);
   if (!currentUser) return <p>Loading</p>;
 
   return <div>welcome to your profile {currentUser.username}</div>;
