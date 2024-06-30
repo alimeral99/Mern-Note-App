@@ -42,6 +42,23 @@ const login = async (req, res, next) => {
   }
 };
 
+const auth = async (req, res, next) => {
+  const { token } = req.body;
+
+  if (!token) return next(errorHandler(401, "Unauthorized."));
+
+  try {
+    const verifyToken = jwt.verify(token, process.env.JWT_SECRET);
+
+    const user = await User.findById(verifyToken.id);
+    user.password = null;
+
+    return res.json(user);
+  } catch (e) {
+    return next(errorHandler(401, "invalid token"));
+  }
+};
+
 module.exports = {
   register,
   login,
