@@ -38,6 +38,8 @@ function Signup() {
     <div className="signup">
       <div className="login">
         <div className="login__container">
+          {error && <p>{error}</p>}
+
           <h1>Sign Up</h1>
           <form onSubmit={handleRegister}>
             <h5>Name</h5>

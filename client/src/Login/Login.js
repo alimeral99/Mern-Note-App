@@ -30,6 +30,8 @@ function SignIn() {
   return (
     <div className="login">
       <div className="login__container">
+        {error && <p>{error}</p>}
+
         <h1>Login</h1>
         <form onSubmit={handleLogin}>
           <h5>E-mail</h5>
