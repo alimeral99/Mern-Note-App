@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { login } from "../redux/user/userApi";
+
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { error, currentUser } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/profile");
+    }
+  }, [currentUser, navigate, dispatch]);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    if ((!email, !password)) return;
+
+    login(dispatch, email, password);
+  };
+
   return (
     <div className="login">
       <div className="login__container">
         <h1>Login</h1>
-        <form>
+        <form onSubmit={handleLogin}>
           <h5>E-mail</h5>
           <input
             type="text"
