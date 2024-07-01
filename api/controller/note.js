@@ -20,6 +20,12 @@ const addNote = async (req, res, next) => {
   }
 };
 
+const getAllNote = async (req, res, next) => {
+  const notes = await Note.find({ userId: req.user.id });
+
+  res.status(200).json(notes);
+};
+
 function getRandomColor() {
   var letters = "BCDEF".split("");
   var randomColor = "#";
@@ -32,4 +38,5 @@ function getRandomColor() {
 
 module.exports = {
   addNote,
+  getAllnote,
 };
