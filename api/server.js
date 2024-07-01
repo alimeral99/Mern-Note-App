@@ -15,12 +15,14 @@ app.use(
 require("dotenv").config();
 
 const userRouter = require("./routes/user");
+const noteRouter = require("./routes/note");
 
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
 app.use("/user", userRouter);
+app.use("/note", noteRouter);
 
 mongoose
   .connect(process.env.DB_URI)
