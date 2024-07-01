@@ -25,7 +25,7 @@ function Header() {
             <Link to="/profile" className="links">
               Profile
             </Link>
-            <a href="/login" className="links">
+            <a href="/login" className="links" onClick={handleLogout}>
               Logout
             </a>
           </>
