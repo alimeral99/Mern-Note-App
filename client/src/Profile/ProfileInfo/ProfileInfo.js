@@ -1,7 +1,10 @@
 import React from "react";
 import "./ProfileInfo.css";
 
+import { VscAdd } from "react-icons/vsc";
+
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function ProfileInfo() {
   const { currentUser } = useSelector((state) => state.user);
@@ -13,8 +16,13 @@ function ProfileInfo() {
         {currentUser?.username}
       </h3>
       <div className="test">
+        <div className="note" style={{ backgroundColor: "#CCBED7" }}>
+          <Link to={"/addnote"}>
+            <VscAdd className="add__icon" />
+          </Link>{" "}
+          <h2 className="addNote__name">Add Note</h2>
+        </div>
         <div className="note" style={{ backgroundColor: "#AEDEF2" }}></div>
-        <div className="note" style={{ backgroundColor: "#CCBED7" }}></div>
       </div>{" "}
     </div>
   );

@@ -9,6 +9,7 @@ import { auth } from "./redux/user/userApi";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import AddNote from "./Profile/AddNote/AddNote";
 
 function App() {
   const jwt = localStorage.getItem("jwt");
@@ -29,7 +30,8 @@ function App() {
           <Route path="/" element={<h1>hello world</h1>} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/addnote" element={<AddNote />} />
         </Routes>
       </BrowserRouter>
     </div>
