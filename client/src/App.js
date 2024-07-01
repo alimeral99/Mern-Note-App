@@ -4,12 +4,13 @@ import Header from "./Header/Header";
 import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import Profile from "./Profile/Profile";
+import AddNote from "./Profile/AddNote/AddNote";
+import NoteList from "./Profile/NoteList/NoteList";
 
 import { auth } from "./redux/user/userApi";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import AddNote from "./Profile/AddNote/AddNote";
 
 function App() {
   const jwt = localStorage.getItem("jwt");
@@ -32,6 +33,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/addnote" element={<AddNote />} />
+          <Route path="/notelist" element={<NoteList />} />
         </Routes>
       </BrowserRouter>
     </div>

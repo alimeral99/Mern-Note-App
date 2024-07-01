@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darkgray;
+  border-radius: 5px;
+}
+
+.noteList__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  height: fit-content;
+  padding: 5px;
+  background-color: #ffffff;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.restart__icon {
+  font-size: 26px;
+  cursor: pointer;
+  color: #7a7a7a;
+}
