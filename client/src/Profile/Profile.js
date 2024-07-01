@@ -1,5 +1,6 @@
 import React from "react";
 import "./Profile.css";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,7 +9,11 @@ function Profile() {
 
   if (!currentUser) return <p>Loading</p>;
 
-  return <div>welcome to your profile {currentUser.username}</div>;
+  return (
+    <div className="profile">
+      <ProfileInfo />
+    </div>
+  );
 }
 
 export default Profile;

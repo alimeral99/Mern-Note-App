@@ -1,0 +1,33 @@
+.profile__info {
+  position: sticky;
+  margin-left: 15px;
+  height: 600px;
+  width: 17%;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.profile__username {
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 300;
+  color: #333;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-radius: 3px;
+}
+
+.note {
+  margin: 10px auto;
+  height: 180px;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  border-top: 15px solid #7a7a7a;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  transform: scaleX(1);
+  transform-origin: 100% 50%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
