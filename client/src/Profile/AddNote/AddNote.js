@@ -1,16 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AddNote.css";
+import { addNote } from "../../redux/note/noteApi";
 
-import { MdArrowBack } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
+import { MdArrowBack } from "react-icons/md";
 
 function AddNote() {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { currentUser } = useSelector((state) => state.user);
+  const { succesRedirect } = useSelector((state) => state.note);
+
+  useEffect(() => {
+    if (succesRedirect) {
+      navigate("/profile");
+    }
+  }, [succesRedirect, navigate, dispatch]);
+
+  const handleNote = (e) => {
+    e.preventDefault();
+
+    if ((!title, !note)) return;
+
+    const contentNote = {
+      title,
+      note,
+    };
+
+    addNote(dispatch, contentNote, currentUser.token);
+  };
+
   return (
     <div className="addNote">
-      <form className="note__form">
+      <form className="note__form" onSubmit={handleNote}>
         <div className="newNote__backLink">
           <Link to={"/profile"}>
             <MdArrowBack />

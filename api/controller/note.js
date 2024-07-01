@@ -11,6 +11,7 @@ const addNote = async (req, res, next) => {
     userId: req.user.id,
   });
 
+  console.log(newPost);
   try {
     await newPost.save();
     res.status(201).json("success");
