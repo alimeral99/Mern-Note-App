@@ -6,12 +6,15 @@ const initialState = {
   succesRedirect: false,
 };
 
+const token = localStorage.getItem("jwt");
+
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
     signUpSuccess: (state, action) => {
       state.currentUser = action.payload;
+      state.currentUser.token = token;
     },
     signInFailure: (state, action) => {
       state.error = action.payload;
