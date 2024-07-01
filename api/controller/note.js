@@ -38,5 +38,5 @@ function getRandomColor() {
 
 module.exports = {
   addNote,
-  getAllnote,
+  getAllNote,
 };
