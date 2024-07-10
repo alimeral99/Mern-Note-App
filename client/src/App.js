@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import NoteDetail from "./Profile/NoteDetail/NoteDetail";
 import EditNote from "./Profile/EditNote/EditNote";
+import PrivateRoutes from "./PrivateRoutes";
 
 function App() {
   const jwt = localStorage.getItem("jwt");
@@ -33,11 +34,13 @@ function App() {
           <Route path="/" element={<h1>hello world</h1>} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/addnote" element={<AddNote />} />
-          <Route path="/notelist" element={<NoteList />} />
-          <Route path="/notedetails/:id" element={<NoteDetail />} />
-          <Route path="/editnote/:id" element={<EditNote />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/addnote" element={<AddNote />} />
+            <Route path="/notelist" element={<NoteList />} />
+            <Route path="/notedetails/:id" element={<NoteDetail />} />
+            <Route path="/editnote/:id" element={<EditNote />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
