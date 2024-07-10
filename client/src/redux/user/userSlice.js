@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const token = localStorage.getItem("jwt");
+
 const initialState = {
   currentUser: null,
   error: null,
   succesRedirect: false,
 };
-
-const token = localStorage.getItem("jwt");
 
 const userSlice = createSlice({
   name: "user",
@@ -22,9 +22,15 @@ const userSlice = createSlice({
     setRedirect: (state) => {
       state.succesRedirect = true;
     },
+    resetUser: (state) => {
+      state.succesRedirect = false;
+      state.error = null;
+      state.currentUser = null;
+    },
   },
 });
 
-export const { signUpSuccess, signInFailure, setRedirect } = userSlice.actions;
+export const { signUpSuccess, signInFailure, setRedirect, resetUser } =
+  userSlice.actions;
 
 export default userSlice.reducer;

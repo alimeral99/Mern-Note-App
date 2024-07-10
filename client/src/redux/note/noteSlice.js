@@ -25,10 +25,20 @@ const noteSlice = createSlice({
       state.noteDetail = action.payload;
       state.error = null;
     },
+    resetNote: (state) => {
+      state.currentNote = null;
+      state.succesRedirect = false;
+      state.error = null;
+    },
   },
 });
 
-export const { noteSuccess, noteFailure, setRedirect, noteDetailSuccess } =
-  noteSlice.actions;
+export const {
+  noteSuccess,
+  noteFailure,
+  setRedirect,
+  noteDetailSuccess,
+  resetNote,
+} = noteSlice.actions;
 
 export default noteSlice.reducer;

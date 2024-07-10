@@ -10,6 +10,7 @@ function NoteList() {
   const { currentNote, error } = useSelector((state) => state.note);
   const { currentUser } = useSelector((state) => state.user);
 
+  console.log(currentUser);
   const [toggle, setToggle] = useState(true);
 
   const dispatch = useDispatch();
