@@ -8,7 +8,7 @@ function List({ note }) {
 
   return (
     <div
-      onClick={() => navigate(`/noteDetails/${note._id}`)}
+      onClick={() => navigate(`/notedetails/${note._id}`)}
       className="list"
       style={{ background: `${note.color}` }}
     >

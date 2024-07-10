@@ -36,3 +36,16 @@ export const getNote = async (dispatch, token) => {
     dispatch(noteSuccess(data));
   } catch ({ response }) {}
 };
+
+export const getNoteDetails = async (dispatch, id, token) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const { data } = await axios.get(`${API_URL}/note/details/${id}`, config);
+
+    dispatch(noteDetailSuccess(data));
+  } catch ({ response }) {}
+};
