@@ -6,6 +6,7 @@ const {
   getAllNote,
   getNote,
   updateNote,
+  deleteNote,
 } = require("../controller/note");
 
 const { authenticateToken } = require("../utils/authMiddleWare");
@@ -15,5 +16,7 @@ router.get("/details/:id", authenticateToken, getNote);
 
 router.post("/addNote", authenticateToken, addNote);
 router.patch("/update", authenticateToken, updateNote);
+
+router.delete("/delete/:id", authenticateToken, deleteNote);
 
 module.exports = router;

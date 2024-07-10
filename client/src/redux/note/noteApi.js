@@ -68,3 +68,15 @@ export const updateNote = async (dispatch, contentNote, token) => {
     dispatch(noteDetailSuccess(data));
   } catch ({ response }) {}
 };
+
+export const deleteNote = async (id, token) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    await axios.delete(`${API_URL}/note/delete/${id}`, config);
+  } catch ({ response }) {}
+};

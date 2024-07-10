@@ -40,6 +40,11 @@ const updateNote = async (req, res, next) => {
   res.status(200).json(updatedNote);
 };
 
+const deleteNote = async (req, res, next) => {
+  await Note.findByIdAndDelete(req.params.id);
+  res.status(200).json("The Note has been deleted");
+};
+
 function getRandomColor() {
   var letters = "BCDEF".split("");
   var randomColor = "#";
@@ -55,4 +60,5 @@ module.exports = {
   getAllNote,
   getNote,
   updateNote,
+  deleteNote,
 };

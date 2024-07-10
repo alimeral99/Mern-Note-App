@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./NoteDetail.css";
-import { getNoteDetails } from "../../redux/note/noteApi";
+import { getNoteDetails, deleteNote } from "../../redux/note/noteApi";
 
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,6 +22,11 @@ function NoteDetail() {
     getNoteDetails(dispatch, id, currentUser.token);
   }, [getNoteDetails, id]);
 
+  const deleteHandler = (id) => {
+    deleteNote(id, currentUser.token);
+    navigate("/profile");
+  };
+
   if (!noteDetail) return <p>Loading</p>;
 
   return (
@@ -37,6 +42,10 @@ function NoteDetail() {
                 <IoMdAdd />
               </span>
             </Link>
+
+            <span>
+              <IoMdTrash onClick={() => deleteHandler(noteDetail._id)} />
+            </span>
 
             <Link to={`/editNote/${id}`}>
               <span>
