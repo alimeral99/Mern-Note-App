@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { updateNote } from "../../redux/note/noteApi";
 
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,9 +15,23 @@ function EditNote() {
   const [title, setTitle] = useState(noteDetail.title);
   const [note, setNote] = useState(noteDetail.note);
 
+  const updateHandler = (e) => {
+    e.preventDefault();
+
+    if ((!title, !note)) return;
+
+    const contentNote = {
+      id: noteDetail._id,
+      title,
+      note,
+    };
+    updateNote(dispatch, contentNote, currentUser.token);
+    navigate("/profile");
+  };
+
   return (
     <div className="addNote">
-      <form className="note__form">
+      <form className="note__form" onSubmit={updateHandler}>
         <div className="newNote__backLink">
           <Link to={"/profile"}>
             <MdArrowBack />

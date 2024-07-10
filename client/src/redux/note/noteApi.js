@@ -49,3 +49,22 @@ export const getNoteDetails = async (dispatch, id, token) => {
     dispatch(noteDetailSuccess(data));
   } catch ({ response }) {}
 };
+
+export const updateNote = async (dispatch, contentNote, token) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const { data } = await axios.patch(
+      `${API_URL}/note/update`,
+      {
+        contentNote,
+      },
+      config
+    );
+    dispatch(noteDetailSuccess(data));
+  } catch ({ response }) {}
+};

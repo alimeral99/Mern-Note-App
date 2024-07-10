@@ -11,6 +11,7 @@ app.use(
   cors({
     origin: "http://localhost:3000",
     credentials: true,
+    methods: "PATCH",
   })
 );
 
@@ -23,8 +24,8 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-app.use("/user", userRouter);
 app.use("/note", noteRouter);
+app.use("/user", userRouter);
 
 mongoose
   .connect(process.env.DB_URI)
