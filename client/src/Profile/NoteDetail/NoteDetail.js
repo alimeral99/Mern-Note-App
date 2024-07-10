@@ -37,6 +37,12 @@ function NoteDetail() {
                 <IoMdAdd />
               </span>
             </Link>
+
+            <Link to={`/editNote/${id}`}>
+              <span>
+                <MdEdit />
+              </span>
+            </Link>
           </div>
 
           <Link className="back" to={"/profile"}>
