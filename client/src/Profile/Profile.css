@@ -7,3 +7,23 @@
   margin: 0 auto;
   width: 80%;
 }
+
+.searchNote__container {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid lightgray;
+  width: 70%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.search__note {
+  outline: none;
+  border: none;
+  background: none;
+  padding-left: 5px;
+  font-weight: 300;
+  flex: 1;
+}

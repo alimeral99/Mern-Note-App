@@ -80,3 +80,23 @@ export const deleteNote = async (id, token) => {
     await axios.delete(`${API_URL}/note/delete/${id}`, config);
   } catch ({ response }) {}
 };
+
+export const searchNote = async (dispatch, search, token) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const { data } = await axios.get(
+      `${API_URL}/note/search/${search}`,
+      config
+    );
+
+    dispatch(noteSuccess(data));
+  } catch ({ response }) {
+    const { data } = response;
+    dispatch(noteFailure(data.message));
+  }
+};

@@ -40,6 +40,21 @@ const updateNote = async (req, res, next) => {
   res.status(200).json(updatedNote);
 };
 
+const searchNote = async (req, res, next) => {
+  const search = req.params.query;
+
+  const searchedNote = await Note.find({
+    title: { $regex: search, $options: "i" },
+    userId: { $regex: req.user.id },
+  });
+
+  if (searchedNote < 1) return next(errorHandler(404, "No such note found"));
+
+  if (searchedNote) {
+    res.status(200).json(searchedNote);
+  }
+};
+
 const deleteNote = async (req, res, next) => {
   await Note.findByIdAndDelete(req.params.id);
   res.status(200).json("The Note has been deleted");
@@ -61,4 +76,5 @@ module.exports = {
   getNote,
   updateNote,
   deleteNote,
+  searchNote,
 };

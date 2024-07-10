@@ -7,11 +7,13 @@ const {
   getNote,
   updateNote,
   deleteNote,
+  searchNote,
 } = require("../controller/note");
 
 const { authenticateToken } = require("../utils/authMiddleWare");
 
 router.get("/all", authenticateToken, getAllNote);
+router.get("/search/:query", authenticateToken, searchNote);
 router.get("/details/:id", authenticateToken, getNote);
 
 router.post("/addNote", authenticateToken, addNote);
