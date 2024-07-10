@@ -19,6 +19,11 @@ const addNote = async (req, res, next) => {
     next(error);
   }
 };
+const getNote = async (req, res, next) => {
+  const note = await Note.findOne({ userId: req.user.id, _id: req.params.id });
+
+  res.status(200).json(note);
+};
 
 const getAllNote = async (req, res, next) => {
   const notes = await Note.find({ userId: req.user.id });
@@ -39,4 +44,5 @@ function getRandomColor() {
 module.exports = {
   addNote,
   getAllNote,
+  getNote,
 };
