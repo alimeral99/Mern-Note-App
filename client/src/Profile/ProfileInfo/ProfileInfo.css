@@ -31,13 +31,13 @@
 }
 
 .add__icon {
-  font-size: 35px;
+  font-size: 45px;
   color: #333;
-  margin-top: 35px;
+  margin-top: 45px;
 }
 
 .addNote__name {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 400;
 }

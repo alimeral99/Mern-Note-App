@@ -20,7 +20,6 @@ function ProfileInfo() {
           <Link to={"/addnote"}>
             <VscAdd className="add__icon" />
           </Link>{" "}
-          <h2 className="addNote__name">Add Note</h2>
         </div>
         <div className="note" style={{ backgroundColor: "#AEDEF2" }}></div>
       </div>{" "}
