@@ -11,6 +11,7 @@ import { auth } from "./redux/user/userApi";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import NoteDetail from "./Profile/NoteDetail/NoteDetail";
 
 function App() {
   const jwt = localStorage.getItem("jwt");
@@ -34,6 +35,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/addnote" element={<AddNote />} />
           <Route path="/notelist" element={<NoteList />} />
+          <Route path="/notedetails/:id" element={<NoteDetail />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,9 +1,17 @@
 import React from "react";
 import "./List.css";
 
+import { useNavigate } from "react-router-dom";
+
 function List({ note }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="list" style={{ background: `${note.color}` }}>
+    <div
+      onClick={() => navigate(`/noteDetails/${note._id}`)}
+      className="list"
+      style={{ background: `${note.color}` }}
+    >
       <h3 className="list__title">{note.title}</h3>
     </div>
   );

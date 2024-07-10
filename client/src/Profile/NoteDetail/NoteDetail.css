@@ -1,0 +1,58 @@
+.note__details {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.noteDetails__container {
+  background-color: #f7f0c3;
+  width: 70%;
+  padding: 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.noteDetails__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  color: #333;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.noteDetils__linksLeft span {
+  margin-right: 10px;
+  color: #333;
+  font-size: 18px;
+}
+
+.noteDetails__links .back {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.noteDetails__time {
+  margin: 10px 0;
+  color: gray;
+}
+
+.noteDetails__title {
+  text-transform: capitalize;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.noteDetails__content {
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  letter-spacing: 0.3;
+}
