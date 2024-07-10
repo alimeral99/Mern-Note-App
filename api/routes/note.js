@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { addNote, getAllnote } = require("../controller/note");
+const { addNote, getAllNote } = require("../controller/note");
 
 const { authenticateToken } = require("../utils/authMiddleWare");
 

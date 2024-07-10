@@ -22,3 +22,17 @@ export const addNote = async (dispatch, contentNote, token) => {
     dispatch(setRedirect());
   } catch ({ response }) {}
 };
+
+export const getNote = async (dispatch, token) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const { data } = await axios.get(`${API_URL}/note/all`, config);
+
+    dispatch(noteSuccess(data));
+  } catch ({ response }) {}
+};
