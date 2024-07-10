@@ -31,6 +31,15 @@ const getAllNote = async (req, res, next) => {
   res.status(200).json(notes);
 };
 
+const updateNote = async (req, res, next) => {
+  const { id } = req.body.contentNote;
+  const updatedNote = await Note.findByIdAndUpdate(id, req.body.contentNote, {
+    new: true,
+  });
+
+  res.status(200).json(updatedNote);
+};
+
 function getRandomColor() {
   var letters = "BCDEF".split("");
   var randomColor = "#";
@@ -45,4 +54,5 @@ module.exports = {
   addNote,
   getAllNote,
   getNote,
+  updateNote,
 };
