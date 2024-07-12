@@ -9,11 +9,13 @@ import { MdArrowBack } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
 import { MdEdit } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
+import { noteDetailSuccess } from "../../redux/note/noteSlice";
 
 function NoteDetail() {
   const { noteDetail } = useSelector((state) => state.note);
   const { currentUser, userToken } = useSelector((state) => state.user);
 
+  console.log(noteDetail);
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,6 +23,11 @@ function NoteDetail() {
   useEffect(() => {
     getNoteDetails(dispatch, id, userToken);
   }, [getNoteDetails, id]);
+
+  //Clear data when detached from component
+  useEffect(() => {
+    dispatch(noteDetailSuccess(null));
+  }, [id]);
 
   const deleteHandler = (id) => {
     deleteNote(id, userToken);

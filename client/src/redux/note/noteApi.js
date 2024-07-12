@@ -30,7 +30,6 @@ export const getNote = async (dispatch, token) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    console.log(token);
     const { data } = await axios.get(`${API_URL}/note/all`, config);
 
     dispatch(noteSuccess(data));
