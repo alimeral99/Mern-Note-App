@@ -5,6 +5,7 @@ import { getNote } from "../../redux/note/noteApi";
 
 import { useSelector, useDispatch } from "react-redux";
 import { MdOutlineRestartAlt } from "react-icons/md";
+import Loading from "../../Loading/Loading";
 
 function NoteList() {
   const { currentNote, error } = useSelector((state) => state.note);
@@ -20,7 +21,9 @@ function NoteList() {
     }
   }, [currentUser, toggle]);
 
-  if (!currentUser) return <p>Loading...</p>;
+  if (!currentUser) return <Loading />;
+
+  if (!currentNote) return <Loading />;
 
   return (
     <div className="noteList__container">

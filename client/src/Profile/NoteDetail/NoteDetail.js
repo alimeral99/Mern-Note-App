@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./NoteDetail.css";
 import { getNoteDetails, deleteNote } from "../../redux/note/noteApi";
+import Loading from "../../Loading/Loading";
 
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -34,7 +35,7 @@ function NoteDetail() {
     navigate("/profile");
   };
 
-  if (!noteDetail) return <p>Loading</p>;
+  if (!noteDetail) return <Loading />;
 
   return (
     <div className="note__details">

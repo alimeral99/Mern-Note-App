@@ -1,4 +1,5 @@
 const Note = require("../models/note");
+const { errorHandler } = require("../utils/error");
 
 const addNote = async (req, res, next) => {
   const { title, note } = req.body;
