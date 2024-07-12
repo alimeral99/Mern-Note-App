@@ -38,7 +38,10 @@ const login = async (req, res, next) => {
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
   if (token) {
-    res.status(200).json({ user, token });
+    res.status(201).json({
+      user,
+      token,
+    });
   }
 };
 

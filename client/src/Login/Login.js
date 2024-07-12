@@ -3,21 +3,22 @@ import { login } from "../redux/user/userApi";
 
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { resetUser } from "../redux/user/userSlice";
 
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { error, currentUser } = useSelector((state) => state.user);
+  const { error, successRedirect } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (currentUser) {
+    if (successRedirect) {
       navigate("/profile");
     }
-  }, [currentUser, navigate, dispatch]);
+  }, [successRedirect, navigate, dispatch]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

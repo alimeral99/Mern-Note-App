@@ -4,21 +4,23 @@ import "./Signup.css";
 import { register } from "../redux/user/userApi";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { resetUser } from "../redux/user/userSlice";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { succesRedirect, error } = useSelector((state) => state.user);
+  const { successRedirect, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (succesRedirect) {
+    if (successRedirect) {
       navigate("/login");
     }
-  }, [succesRedirect, navigate]);
+    dispatch(resetUser());
+  }, [successRedirect, navigate, dispatch]);
 
   const handleRegister = async (e) => {
     e.preventDefault();

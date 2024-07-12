@@ -3,6 +3,7 @@ import {
   signInFailure,
   signUpSuccess,
   setRedirect,
+  checkToken,
   resetUser,
 } from "./userSlice";
 import { resetNote } from "../note/noteSlice";
@@ -26,9 +27,11 @@ export const login = async (dispatch, email, password) => {
     });
 
     const { token, user } = data;
-    console.log(token);
     localStorage.setItem("jwt", token);
+
+    dispatch(checkToken(token));
     dispatch(signUpSuccess(user));
+    dispatch(setRedirect());
   } catch ({ response }) {
     const { data } = response;
     dispatch(signInFailure(data.message));

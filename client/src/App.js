@@ -10,14 +10,16 @@ import NoteList from "./Profile/NoteList/NoteList";
 import { auth } from "./redux/user/userApi";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import NoteDetail from "./Profile/NoteDetail/NoteDetail";
 import EditNote from "./Profile/EditNote/EditNote";
 import PrivateRoutes from "./PrivateRoutes";
 
 function App() {
   const jwt = localStorage.getItem("jwt");
+
   const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (!jwt) return;
@@ -31,10 +33,12 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<h1>hello world</h1>} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+
           <Route element={<PrivateRoutes />}>
+            <Route path="/" element={<h1>hello world</h1>} />
+
             <Route path="/profile" element={<Profile />} />
             <Route path="/addnote" element={<AddNote />} />
             <Route path="/notelist" element={<NoteList />} />

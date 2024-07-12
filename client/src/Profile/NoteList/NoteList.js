@@ -8,16 +8,15 @@ import { MdOutlineRestartAlt } from "react-icons/md";
 
 function NoteList() {
   const { currentNote, error } = useSelector((state) => state.note);
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser, userToken } = useSelector((state) => state.user);
 
-  console.log(currentUser);
   const [toggle, setToggle] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (currentUser) {
-      getNote(dispatch, currentUser.token);
+      getNote(dispatch, userToken);
     }
   }, [currentUser, toggle]);
 

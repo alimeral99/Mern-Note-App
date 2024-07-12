@@ -7,7 +7,7 @@ import { MdArrowBack } from "react-icons/md";
 
 function EditNote() {
   const { noteDetail } = useSelector((state) => state.note);
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser, userToken } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ function EditNote() {
       title,
       note,
     };
-    updateNote(dispatch, contentNote, currentUser.token);
+    updateNote(dispatch, contentNote, userToken);
     navigate("/profile");
   };
 

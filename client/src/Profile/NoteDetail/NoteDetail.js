@@ -12,18 +12,18 @@ import { IoMdAdd } from "react-icons/io";
 
 function NoteDetail() {
   const { noteDetail } = useSelector((state) => state.note);
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser, userToken } = useSelector((state) => state.user);
 
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    getNoteDetails(dispatch, id, currentUser.token);
+    getNoteDetails(dispatch, id, userToken);
   }, [getNoteDetails, id]);
 
   const deleteHandler = (id) => {
-    deleteNote(id, currentUser.token);
+    deleteNote(id, userToken);
     navigate("/profile");
   };
 

@@ -13,7 +13,7 @@ function AddNote() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser, userToken } = useSelector((state) => state.user);
   const { succesRedirect } = useSelector((state) => state.note);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function AddNote() {
       note,
     };
 
-    addNote(dispatch, contentNote, currentUser.token);
+    addNote(dispatch, contentNote, userToken);
   };
 
   return (
