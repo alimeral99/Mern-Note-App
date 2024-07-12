@@ -5,6 +5,7 @@ import { addNote } from "../../redux/note/noteApi";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
+import { resetNote } from "../../redux/note/noteSlice";
 
 function AddNote() {
   const [title, setTitle] = useState("");
@@ -20,6 +21,7 @@ function AddNote() {
     if (succesRedirect) {
       navigate("/profile");
     }
+    dispatch(resetNote());
   }, [succesRedirect, navigate, dispatch]);
 
   const handleNote = (e) => {

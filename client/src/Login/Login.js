@@ -9,16 +9,16 @@ function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { error, successRedirect } = useSelector((state) => state.user);
+  const { error, currentUser } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (successRedirect) {
+    if (currentUser) {
       navigate("/profile");
     }
-  }, [successRedirect, navigate, dispatch]);
+  }, [currentUser, navigate, dispatch]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

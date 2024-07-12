@@ -44,6 +44,7 @@ export const auth = async (dispatch, token) => {
       token,
     });
 
+    dispatch(checkToken(token));
     dispatch(signUpSuccess(data));
   } catch ({ response }) {}
 };

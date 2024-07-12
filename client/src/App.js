@@ -19,7 +19,6 @@ function App() {
   const jwt = localStorage.getItem("jwt");
 
   const dispatch = useDispatch();
-  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (!jwt) return;

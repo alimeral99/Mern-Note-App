@@ -37,7 +37,7 @@ function NoteDetail() {
       >
         <div className="noteDetails__links">
           <div className="noteDetils__linksLeft">
-            <Link to="/NewNote">
+            <Link to="/addNote">
               <span>
                 <IoMdAdd />
               </span>
