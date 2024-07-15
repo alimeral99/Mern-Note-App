@@ -1,5 +1,9 @@
-.list {
+.list__container {
   margin: 5px auto;
+}
+
+.list {
+  margin: 0 3px;
   height: 180px;
   width: 194px;
   padding: 10px;

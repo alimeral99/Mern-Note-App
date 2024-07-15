@@ -36,8 +36,6 @@ function App() {
           <Route path="/login" element={<Login />} />
 
           <Route element={<PrivateRoutes />}>
-            <Route path="/" element={<h1>hello world</h1>} />
-
             <Route path="/profile" element={<Profile />} />
             <Route path="/addnote" element={<AddNote />} />
             <Route path="/notelist" element={<NoteList />} />
