@@ -2,7 +2,7 @@
   position: sticky;
   margin-left: 15px;
   height: 105vh;
-  width: 17%;
+  width: 18%;
   padding: 10px;
   background-color: #ffffff;
   border: 1px solid lightgray;
@@ -19,8 +19,8 @@
 
 .note {
   margin: 10px auto;
-  height: 180px;
-  width: 200px;
+  height: 160px;
+  width: 180px;
   padding: 10px;
   text-align: center;
   border-top: 15px solid #7a7a7a;
@@ -42,30 +42,19 @@
   font-weight: 400;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1072px) {
   .profile__info {
-    width: 22%;
+    width: 25%;
   }
 }
 
-@media screen and (max-width: 960px) {
-  .profile__info {
-    width: 28%;
-  }
-
-  .note {
-    height: 150px;
-    width: 170px;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  .profile__info {
-    width: 34%;
-  }
-
+@media screen and (max-width: 780px) {
   .note {
     height: 130px;
     width: 150px;
+  }
+
+  .profile__info {
+    width: 35%;
   }
 }
