@@ -21,7 +21,8 @@ function ProfileInfo() {
             <VscAdd className="add__icon" />
           </Link>{" "}
         </div>
-        <div className="note" style={{ backgroundColor: "#AEDEF2" }}></div>
+        <div className="note" style={{ backgroundColor: "#AEDEF2" }}></div>{" "}
+        <div className="note" style={{ backgroundColor: "#DDFFBB" }}></div>
       </div>{" "}
     </div>
   );

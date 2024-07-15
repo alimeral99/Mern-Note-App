@@ -1,7 +1,7 @@
 .profile__info {
   position: sticky;
   margin-left: 15px;
-  height: 600px;
+  height: 105vh;
   width: 17%;
   padding: 10px;
   background-color: #ffffff;
@@ -40,4 +40,32 @@
   margin-top: 20px;
   font-size: 20px;
   font-weight: 400;
+}
+
+@media screen and (max-width: 1250px) {
+  .profile__info {
+    width: 22%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .profile__info {
+    width: 28%;
+  }
+
+  .note {
+    height: 150px;
+    width: 170px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .profile__info {
+    width: 34%;
+  }
+
+  .note {
+    height: 130px;
+    width: 150px;
+  }
 }
