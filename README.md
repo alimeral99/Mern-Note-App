@@ -16,15 +16,15 @@
   - Express
   - Mongo DB
 
-   # to Run The Project
-   # Env Variables
+   ## to Run The Project
+   ### Env Variables
 
     ```
     MONGO_URI = your mongodb uri
     JWT_SECRET = 'abc123'
     ```
 
-   # Run
+   ### Run
     ```
     cd client
     npm install
