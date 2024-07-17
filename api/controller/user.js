@@ -56,7 +56,7 @@ const auth = async (req, res, next) => {
     const user = await User.findById(verifyToken.id);
     user.password = null;
 
-    return res.json(user);
+    return res.status(200).json(user);
   } catch (e) {
     return next(errorHandler(401, "invalid token"));
   }

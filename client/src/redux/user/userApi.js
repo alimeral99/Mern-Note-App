@@ -25,6 +25,7 @@ export const login = async (dispatch, email, password) => {
       email,
       password,
     });
+    console.log(data);
 
     const { token, user } = data;
     localStorage.setItem("jwt", token);
