@@ -1,1 +1,1 @@
-export const API_URL = "https://mern-note-app-z7sy.onrender.com";
+export const API_URL = "http://localhost:5000";
