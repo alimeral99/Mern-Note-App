@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
+
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+const port = process.env.PORT || 5000;
 
 app.use(
   cors({
